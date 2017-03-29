@@ -1,0 +1,29 @@
+- name: Get release
+  command: lsb_release -c -s
+  register: release
+
+- name: Add Hipchat 4 Repo
+  apt_repository:
+    repo: deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client {{ release.stdout }} main
+    state: present
+    filename: /etc/apt/sources.list.d/atlassian-hipchat4
+  when: release.stdout != "loki"
+
+- name: Add Hipchat 4 Repo
+  apt_repository:
+    repo: deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client xenial main
+    state: present
+    filename: /etc/apt/sources.list.d/atlassian-hipchat4
+  when: release.stdout == "loki"
+
+- name: Add Hipchat 4 key
+  apt_key:
+    url: "https://atlassian.artifactoryonline.com/atlassian/api/gpg/key/public"
+    state: present
+
+- name: install Hipchat 4
+  apt:
+    name={{ item }}
+    update_cache=yes
+  with_items:
+    - hipchat4

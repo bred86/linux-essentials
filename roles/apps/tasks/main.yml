@@ -1,0 +1,16 @@
+- name: install Apps
+  apt:
+    name={{ item }}
+    update_cache=yes
+  with_items:
+    - midori
+    - midori-dbg
+    - icedtea-8-plugin
+    - icedtea-plugin
+    - libstdc++5:i386
+    - libpam0g:i386
+    - libx11-6:i386
+    - terminator
+    - python-setuptools
+    - python3-setuptools
+    - git

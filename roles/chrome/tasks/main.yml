@@ -1,0 +1,17 @@
+- name: get Chrome DEB
+  get_url:
+    url=https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    dest=/tmp/google-chrome-stable_current_amd64.deb
+    mode=0755
+    owner=fred
+    group=fred
+
+- name: install Chrome
+  apt:
+    deb=/tmp/google-chrome-stable_current_amd64.deb
+
+# - name: install Chrome
+#   apt_repository:
+#     repo: deb http://dl.google.com/linux/chrome/deb/ stable main
+#     state: present
+#     filename: 'google-chrome'

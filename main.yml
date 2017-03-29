@@ -1,0 +1,11 @@
+---
+- hosts: all
+
+  roles:
+    - { role: setup, tags: ["setup"] }
+    - { role: atom, tags: ["atom"] }
+    - { role: java, tags: ["java"] }
+    - { role: apps, tags: ["apps"] }
+    - { role: hipchat, tags: ["hipchat"] }
+    - { role: chrome, tags: ["chrome"] }
+    - { role: docker, tags: ["docker"] }

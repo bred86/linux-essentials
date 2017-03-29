@@ -1,0 +1,11 @@
+- name: get Atom DEB
+  get_url:
+    url=http://atom.io/download/deb
+    dest=/tmp/atom.deb
+    mode=0755
+    owner=fred
+    group=fred
+
+- name: install Atom
+  apt:
+    deb=/tmp/atom.deb

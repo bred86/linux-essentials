@@ -1,0 +1,35 @@
+- name: Get release
+  command: lsb_release -c -s
+  register: release
+
+- name: Add Docker Repo
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ release.stdout }} stable
+    state: present
+    filename: /etc/apt/sources.list.d/docker
+  when: release.stdout != "loki"
+
+- name: Add Docker Repo
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+    state: present
+    filename: /etc/apt/sources.list.d/docker
+  when: release.stdout == "loki"
+
+- name: Add Docker key
+  apt_key:
+    url: "https://download.docker.com/linux/ubuntu/gpg"
+    state: present
+
+- name: install Docker
+  apt:
+    name={{ item }}
+    update_cache=yes
+  with_items:
+    - docker-ce
+
+- name: Adding user to group docker
+  user:
+    name=fred
+    group=docker
+    append=yes
