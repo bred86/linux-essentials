@@ -6,3 +6,12 @@ How to use it:
 ```
 ansible-playbook -i "localhost," -c local main.yml --become --ask-become-pass
 ```
+
+Ansible tested:
+
+```
+$ ansible --version
+ansible 2.2.2.0
+  config file =
+  configured module search path = Default w/o overrides
+```
