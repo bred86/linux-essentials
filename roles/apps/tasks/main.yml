@@ -14,6 +14,7 @@
     - python-setuptools
     - python3-setuptools
     - git
+    - vim
 
 - name: install PIP
   easy_install:
