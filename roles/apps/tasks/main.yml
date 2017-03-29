@@ -14,3 +14,31 @@
     - python-setuptools
     - python3-setuptools
     - git
+
+- name: install PIP
+  easy_install:
+    name=pip
+
+- name: install PIP3
+  easy_install:
+    name=pip
+    executable=easy_install3
+
+- name: install PIP apps
+  pip:
+    name={{ item }}
+  with_items:
+    - elasticsearch
+    - docker
+    - requests
+    - redis
+
+- name: install PIP3 apps
+  pip:
+    name={{ item }}
+    executable=pip3
+  with_items:
+    - elasticsearch
+    - docker
+    - requests
+    - redis
