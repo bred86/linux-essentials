@@ -15,6 +15,8 @@
     - python3-setuptools
     - git
     - vim
+    - shutter
+    - libxml2-utils
 
 - name: install PIP
   easy_install:
@@ -31,6 +33,7 @@
   with_items:
     - elasticsearch
     - docker
+    - docker-compose
     - requests
     - redis
 
@@ -41,5 +44,6 @@
   with_items:
     - elasticsearch
     - docker
+    - docker-compose
     - requests
     - redis
