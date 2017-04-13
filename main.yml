@@ -10,3 +10,5 @@
     - { role: chrome, tags: ["chrome"] }
     - { role: vivaldi, tags: ["vivaldi"] }
     - { role: docker, tags: ["docker"] }
+    - { role: golang, tags: ["golang"] }
+    - { role: insync, tags: ["insync"] }
