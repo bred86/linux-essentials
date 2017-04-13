@@ -1,0 +1,11 @@
+- apt_repository:
+    repo: "ppa:longsleep/golang-backports"
+    state: present
+
+- name: install Hipchat 4
+  apt:
+    name={{ item }}
+    update_cache=yes
+    force=yes
+  with_items:
+    - golang-go
