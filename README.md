@@ -15,3 +15,19 @@ ansible 2.2.2.0
   config file =
   configured module search path = Default w/o overrides
 ```
+
+Apps:
+* Atom
+* Chrome
+* Docker
+* Git
+* Golang
+* Hipchat
+* Insync
+* Java (Oracle)
+* Midori (For VPN use)
+* Spotify
+* Vivaldi
+* Whatsie
+* Vim
+
