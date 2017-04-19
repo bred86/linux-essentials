@@ -14,3 +14,4 @@
     - { role: insync, tags: ["insync"] }
     - { role: spotify, tags: ["spotify"] }
     - { role: whatsie, tags: ["whatsie"] }
+    - { role: anatine, tags: ["anatine"] }
