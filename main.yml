@@ -13,3 +13,4 @@
     - { role: golang, tags: ["golang"] }
     - { role: insync, tags: ["insync"] }
     - { role: spotify, tags: ["spotify"] }
+    - { role: whatsie, tags: ["whatsie"] }

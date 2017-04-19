@@ -1,0 +1,9 @@
+- name: get Whatsie DEB
+  get_url:
+    url=https://github.com/gsantner/whatsie/releases/download/v2.1.0/whatsie-2.1.0-linux-amd64.deb
+    dest=/tmp/whatsie-2.1.0-linux-amd64.deb
+    mode=0755
+
+- name: install Whatsie
+  apt:
+    deb=/tmp/whatsie-2.1.0-linux-amd64.deb
