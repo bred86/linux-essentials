@@ -17,6 +17,7 @@
     - vim
     - shutter
     - libxml2-utils
+    - corebird
 
 - name: install PIP
   easy_install:
