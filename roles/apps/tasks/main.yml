@@ -37,6 +37,8 @@
     - docker-compose
     - requests
     - redis
+    - flake8
+    - flake8-docstrings
 
 - name: install PIP3 apps
   pip:

@@ -7,3 +7,7 @@
 - name: install Atom
   apt:
     deb=/tmp/atom.deb
+
+- name: install Atom's packages
+  command: "apm install linter linter-flake8"
+  become: false
