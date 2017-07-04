@@ -1,13 +1,11 @@
-- name: get Atom DEB
-  get_url:
-    url=http://atom.io/download/deb
-    dest=/tmp/atom.deb
-    mode=0755
+- apt_repository:
+    repo: "ppa:webupd8team/atom"
+    state: present
 
 - name: install Atom
   apt:
-    deb=/tmp/atom.deb
-
-- name: install Atom's packages
-  command: "apm install linter linter-flake8"
-  become: false
+    name='{{ item }}'
+    update_cache=yes
+    force=yes
+  with_items:
+    - atom
