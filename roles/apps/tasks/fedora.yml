@@ -22,6 +22,9 @@
 - include_tasks: fedora/tilix.yml
   tags:
     - tilix
+- include_tasks: fedora/tusk.yml
+  tags:
+    - tusk
 - include_tasks: fedora/vim.yml
   tags:
     - vim
