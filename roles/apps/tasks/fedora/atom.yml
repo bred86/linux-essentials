@@ -1,16 +1,16 @@
-- name: Installing Python Bidings (SE Linux)
+- name: Installing Python bindings (SE Linux)
   dnf:
     name: libselinux-python
     state: latest
 
-- name: Download ATOM RPM
+- name: Downloading Atom RPM
   get_url:
     url: https://atom.io/download/rpm
     dest: /tmp/atom.rpm
     owner: frederico.ferreira
     group: frederico.ferreira
-    
-- name: Install Atom
+
+- name: Installing Atom
   dnf:
     name: /tmp/atom.rpm
     state: present
