@@ -1,0 +1,5 @@
+- name: installing awscli
+  pip:
+    name={{ item }}
+  with_items:
+    - awscli

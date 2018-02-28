@@ -1,0 +1,4 @@
+- name: install cshell
+  dnf:
+    name: shutter
+    state: latest

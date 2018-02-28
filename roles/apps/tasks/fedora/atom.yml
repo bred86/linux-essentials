@@ -1,0 +1,16 @@
+- name: Installing Python Bidings (SE Linux)
+  dnf:
+    name: libselinux-python
+    state: latest
+
+- name: Download ATOM RPM
+  get_url:
+    url: https://atom.io/download/rpm
+    dest: /tmp/atom.rpm
+    owner: frederico.ferreira
+    group: frederico.ferreira
+    
+- name: Install Atom
+  dnf:
+    name: /tmp/atom.rpm
+    state: present

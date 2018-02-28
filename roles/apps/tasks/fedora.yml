@@ -1,0 +1,27 @@
+- include_tasks: fedora/atom.yml
+  tags:
+    - atom
+
+- include_tasks: fedora/chrome.yml
+  tags:
+    - chrome
+
+- include_tasks: fedora/midori.yml
+  tags:
+    - midori
+
+- include_tasks: fedora/shutter.yml
+  tags:
+    - shutter
+
+- include_tasks: fedora/skype.yml
+  tags:
+    - skype
+
+- include_tasks: fedora/telegram.yml
+  tags:
+    - telegram
+
+- include_tasks: fedora/vim.yml
+  tags:
+    - vim

@@ -1,0 +1,15 @@
+- name: Installing Python
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - python
+    - python3
+
+- name: Installing PIP
+  dnf:
+    name: "{{ item }}-pip"
+    state: latest
+  with_items:
+    - python
+    - python3
