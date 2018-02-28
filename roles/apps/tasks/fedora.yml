@@ -18,7 +18,7 @@
   tags:
     - skype
 
-- include_tasks: fedora/telegram.yml
+- include_tasks: general/telegram.yml
   tags:
     - telegram
 
