@@ -1,6 +1,9 @@
 - include_tasks: fedora/atom.yml
   tags:
     - atom
+- include_tasks: general/atom_packages.yml
+  tags:
+    - atom_packages
 - include_tasks: fedora/chrome.yml
   tags:
     - chrome

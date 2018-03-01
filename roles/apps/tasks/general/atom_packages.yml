@@ -1,0 +1,37 @@
+---
+  - name: Installing Atom's package
+    raw: /usr/bin/apm install {{ item }}
+    become: no
+    with_items:
+      - atom-beautify
+      - linter-ui-default
+    tags:
+      - apm
+
+  - name: Installing Atom's Ansible's package
+    raw: /usr/bin/apm install {{ item }}
+    become: no
+    with_items:
+      - language-ansible
+      - linter-ansible-linting
+    tags:
+      - ansible
+
+  - name: Installing Atom's Docker's package
+    raw: /usr/bin/apm install {{ item }}
+    become: no
+    with_items:
+    - linter-docker
+    tags:
+      - docker
+
+  - name: Installing Atom's Python's package
+    raw: /usr/bin/apm install {{ item }}
+    become: no
+    with_items:
+    - atom-ide-ui
+    - ide-python
+    - linter
+    - linter-pycodestyle
+    tags:
+      - python
