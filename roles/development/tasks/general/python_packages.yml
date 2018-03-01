@@ -1,0 +1,5 @@
+- name: installing Python's packages
+  pip:
+    name={{ item }}
+  with_items:
+    - python-language-server
