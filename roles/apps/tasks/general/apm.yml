@@ -4,34 +4,38 @@
     become: no
     with_items:
       - atom-beautify
+      - atom-ide-ui
       - linter-ui-default
+      - intentions
+      - busy-signal
     tags:
-      - apm
+      - apm-packages
 
   - name: Installing Atom's Ansible's package
     raw: /usr/bin/apm install {{ item }}
     become: no
     with_items:
       - language-ansible
-      - linter-ansible-linting
     tags:
       - ansible
+      - apm-packages
 
   - name: Installing Atom's Docker's package
     raw: /usr/bin/apm install {{ item }}
     become: no
     with_items:
-    - linter-docker
+      - linter-docker
     tags:
       - docker
+      - apm-packages
 
   - name: Installing Atom's Python's package
     raw: /usr/bin/apm install {{ item }}
     become: no
     with_items:
-    - atom-ide-ui
-    - ide-python
-    - linter
-    - linter-pycodestyle
+      - ide-python
+      - linter
+      - linter-pycodestyle
     tags:
       - python
+      - apm-packages
