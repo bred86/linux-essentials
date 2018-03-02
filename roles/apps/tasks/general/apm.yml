@@ -5,6 +5,7 @@
     with_items:
       - atom-beautify
       - atom-ide-ui
+      - linter
       - linter-ui-default
       - intentions
       - busy-signal
@@ -35,7 +36,6 @@
     become: no
     with_items:
       - ide-python
-      - linter
       - linter-pycodestyle
     tags:
       - python
