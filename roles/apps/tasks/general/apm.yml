@@ -25,6 +25,7 @@
     become: no
     with_items:
       - linter-docker
+      - language-docker
     tags:
       - docker
       - apm-packages
