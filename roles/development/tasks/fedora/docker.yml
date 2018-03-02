@@ -12,3 +12,8 @@
   dnf:
     name: docker-compose
     state: latest
+
+- name: Enabling Docker service
+  systemd:
+    name: docker
+    enabled: yes
