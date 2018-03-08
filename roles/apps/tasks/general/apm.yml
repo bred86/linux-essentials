@@ -37,6 +37,7 @@
     with_items:
       - ide-python
       - linter-pycodestyle
+      - atom-jinja2
     tags:
       - python
       - apm-packages
