@@ -3,7 +3,7 @@
     - atom
 - include_tasks: general/apm.yml
   tags:
-    - apm-packages
+    - apm
 - include_tasks: fedora/chrome.yml
   tags:
     - chrome
