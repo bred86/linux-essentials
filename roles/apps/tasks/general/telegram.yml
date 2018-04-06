@@ -7,5 +7,5 @@
   unarchive:
     src: /tmp/telegram.tar.xz
     dest: /opt
-    owner: frederico.ferreira
-    group: frederico.ferreira
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
