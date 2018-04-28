@@ -1,52 +1,27 @@
-- name: install Apps
-  apt:
-    name={{ item }}
-    update_cache=yes
-  with_items:
-    - midori
-    - midori-dbg
-    - icedtea-8-plugin
-    - icedtea-plugin
-    - libstdc++5:i386
-    - libpam0g:i386
-    - libx11-6:i386
-    - terminator
-    - python-setuptools
-    - python3-setuptools
-    - git
-    - vim
-    - shutter
-    - libxml2-utils
-    - corebird
-
-- name: install PIP
-  easy_install:
-    name=pip
-
-- name: install PIP3
-  easy_install:
-    name=pip
-    executable=easy_install3
-
-- name: install PIP apps
-  pip:
-    name={{ item }}
-  with_items:
-    - elasticsearch
-    - docker
-    - docker-compose
-    - requests
-    - redis
-    - flake8
-    - flake8-docstrings
-
-- name: install PIP3 apps
-  pip:
-    name={{ item }}
-    executable=pip3
-  with_items:
-    - elasticsearch
-    - docker
-    - docker-compose
-    - requests
-    - redis
+- include_tasks: ubuntu/atom.yml
+  tags:
+    - atom
+- include_tasks: general/apm.yml
+  tags:
+    - apm
+- include_tasks: ubuntu/chrome.yml
+  tags:
+    - chrome
+- include_tasks: ubuntu/hipchat.yml
+  tags:
+    - hipchat
+- include_tasks: general/telegram.yml
+  tags:
+    - telegram
+- include_tasks: ubuntu/tilix.yml
+  tags:
+    - tilix
+- include_tasks: ubuntu/whatsie.yml
+  tags:
+    - whatsie
+- include_tasks: ubuntu/spotify.yml
+  tags:
+    - spotify
+- include_tasks: ubuntu/insync.yml
+  tags:
+    - insync
