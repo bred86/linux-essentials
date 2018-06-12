@@ -41,3 +41,12 @@
     tags:
       - python
       - apm-packages
+
+  - name: Installing Atom's JSON's package
+    raw: /usr/bin/apm install {{ item }}
+    become: no
+    with_items:
+      - pretty-json
+    tags:
+      - python
+      - apm-packages
