@@ -1,6 +1,6 @@
 - name: Add Vivaldi Repo
   apt_repository:
-    repo: deb http://repo.vivaldi.com/stable/deb/ stable main
+    repo: deb [arch=i386,amd64] http://repo.vivaldi.com/stable/deb/ stable main
     state: present
     filename: /etc/apt/sources.list.d/vivaldi
 

@@ -19,7 +19,7 @@
 - name: Add Insync key
   apt_key:
     keyserver: keyserver.ubuntu.com
-    id: ACCAF35C
+    id: A684470CACCAF35C
 
 - name: install Insync
   apt:
