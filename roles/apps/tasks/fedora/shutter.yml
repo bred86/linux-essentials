@@ -1,0 +1,4 @@
+- name: install shutter
+  dnf:
+    name: shutter
+    state: latest

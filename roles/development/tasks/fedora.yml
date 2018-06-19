@@ -1,0 +1,12 @@
+- include_tasks: general/awscli.yml
+  tags:
+    - awscli
+- include_tasks: general/python_packages.yml
+  tags:
+    - python
+- include_tasks: fedora/docker.yml
+  tags:
+    - docker
+- include_tasks: fedora/python.yml
+  tags:
+    - python

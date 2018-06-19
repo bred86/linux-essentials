@@ -1,0 +1,15 @@
+- name: Install Sublime Texte 3 GPG Key
+  rpm_key:
+    state: present
+    key: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+
+- name: Adding Sublime Texte 3 Repository
+  yum_repository:
+    name: sublime-text
+    description: Sublime Text 3 DNF Repository
+    baseurl: https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+
+- name: Installing Sublime Text 3
+  dnf:
+    name: sublime-text
+    state: latest

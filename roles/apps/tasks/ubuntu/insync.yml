@@ -1,0 +1,30 @@
+- name: Get release
+  command: lsb_release -c -s
+  register: release
+
+- name: Add Insync Repo
+  apt_repository:
+    repo: deb http://apt.insynchq.com/ubuntu {{ release.stdout }} non-free contrib
+    state: present
+    filename: /etc/apt/sources.list.d/insync
+  when: release.stdout != "loki"
+
+- name: Add Insync Repo
+  apt_repository:
+    repo: deb http://apt.insynchq.com/ubuntu xenial non-free contrib
+    state: present
+    filename: /etc/apt/sources.list.d/insync
+  when: release.stdout == "loki"
+
+- name: Add Insync key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: A684470CACCAF35C
+
+- name: install Insync
+  apt:
+    name={{ item }}
+    update_cache=yes
+    force=yes
+  with_items:
+    - insync

@@ -1,0 +1,36 @@
+- include_tasks: fedora/atom.yml
+  tags:
+    - atom
+- include_tasks: general/apm.yml
+  tags:
+    - apm
+- include_tasks: fedora/chrome.yml
+  tags:
+    - chrome
+- include_tasks: fedora/hipchat.yml
+  tags:
+    - hipchat
+- include_tasks: fedora/midori.yml
+  tags:
+    - midori
+- include_tasks: fedora/shutter.yml
+  tags:
+    - shutter
+- include_tasks: fedora/skype.yml
+  tags:
+    - skype
+- include_tasks: fedora/sublime.yml
+  tags:
+    - sublime
+- include_tasks: general/telegram.yml
+  tags:
+    - telegram
+- include_tasks: fedora/tilix.yml
+  tags:
+    - tilix
+- include_tasks: fedora/tusk.yml
+  tags:
+    - tusk
+- include_tasks: fedora/vim.yml
+  tags:
+    - vim

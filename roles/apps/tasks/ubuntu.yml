@@ -1,0 +1,33 @@
+- include_tasks: ubuntu/atom.yml
+  tags:
+    - atom
+- include_tasks: general/apm.yml
+  tags:
+    - apm
+- include_tasks: ubuntu/hipchat.yml
+  tags:
+    - hipchat
+- include_tasks: general/telegram.yml
+  tags:
+    - telegram
+- include_tasks: ubuntu/insync.yml
+  tags:
+    - insync
+- include_tasks: ubuntu/skype.yml
+  tags:
+    - skype
+- include_tasks: ubuntu/spotify.yml
+  tags:
+    - spotify
+- include_tasks: ubuntu/tilix.yml
+  tags:
+    - tilix
+- include_tasks: ubuntu/vim.yml
+  tags:
+    - vim
+- include_tasks: ubuntu/vivaldi.yml
+  tags:
+    - vivaldi
+- include_tasks: ubuntu/whatsie.yml
+  tags:
+    - whatsie

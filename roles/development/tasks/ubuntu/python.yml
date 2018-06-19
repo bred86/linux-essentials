@@ -1,0 +1,15 @@
+- name: Installing Python
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - python
+    - python3
+
+- name: Installing PIP
+  apt:
+    name: "{{ item }}-pip"
+    state: latest
+  with_items:
+    - python
+    - python3

@@ -1,52 +1,6 @@
-- name: install Apps
-  apt:
-    name={{ item }}
-    update_cache=yes
-  with_items:
-    - midori
-    - midori-dbg
-    - icedtea-8-plugin
-    - icedtea-plugin
-    - libstdc++5:i386
-    - libpam0g:i386
-    - libx11-6:i386
-    - terminator
-    - python-setuptools
-    - python3-setuptools
-    - git
-    - vim
-    - shutter
-    - libxml2-utils
-    - corebird
+---
+  - include_tasks: ubuntu.yml
+    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-- name: install PIP
-  easy_install:
-    name=pip
-
-- name: install PIP3
-  easy_install:
-    name=pip
-    executable=easy_install3
-
-- name: install PIP apps
-  pip:
-    name={{ item }}
-  with_items:
-    - elasticsearch
-    - docker
-    - docker-compose
-    - requests
-    - redis
-    - flake8
-    - flake8-docstrings
-
-- name: install PIP3 apps
-  pip:
-    name={{ item }}
-    executable=pip3
-  with_items:
-    - elasticsearch
-    - docker
-    - docker-compose
-    - requests
-    - redis
+  - include_tasks: fedora.yml
+    when: ansible_distribution == 'Fedora' or ansible_distribution == 'Red Hat Enterprise Linux'

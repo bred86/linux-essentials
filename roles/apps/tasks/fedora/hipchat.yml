@@ -1,0 +1,12 @@
+- name: Downloading Hipchat 4
+  copy:
+    src=../../files/hipchat
+    dest=/etc/yum.repos.d/atlassian.repo
+    mode=0644
+
+- name: Installing Hipchat 4
+  dnf:
+    name={{ item }}
+    state=latest
+  with_items:
+    - hipchat4

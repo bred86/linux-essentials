@@ -1,0 +1,19 @@
+- name: Downloading Docker repo
+  get_url:
+    url: https://download.docker.com/linux/fedora/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+
+- name: Installing Docker
+  dnf:
+    name: docker-ce
+    state: latest
+
+- name: Installing docker-compose
+  dnf:
+    name: docker-compose
+    state: latest
+
+- name: Enabling Docker service
+  systemd:
+    name: docker
+    enabled: yes
