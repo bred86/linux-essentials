@@ -1,8 +1,9 @@
 - apt_repository:
     repo: "ppa:alexlarsson/flatpak"
     state: present
+  when: {{ ansible_distribution_version is version('14.04', '==') }} is true
 
-- name: install Atom
+- name: install Flatpak
   apt:
     name: '{{ item }}'
     update_cache: yes
