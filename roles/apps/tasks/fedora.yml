@@ -1,36 +1,58 @@
 - include_tasks: fedora/atom.yml
   tags:
     - atom
+    - apps
 - include_tasks: general/apm.yml
   tags:
     - apm
+    - apps
 - include_tasks: fedora/chrome.yml
   tags:
     - chrome
-- include_tasks: fedora/hipchat.yml
-  tags:
-    - hipchat
+    - apps
 - include_tasks: fedora/midori.yml
   tags:
     - midori
+    - apps
 - include_tasks: fedora/shutter.yml
   tags:
     - shutter
-- include_tasks: fedora/skype.yml
-  tags:
-    - skype
+    - apps
 - include_tasks: fedora/sublime.yml
   tags:
     - sublime
+    - apps
 - include_tasks: general/telegram.yml
   tags:
     - telegram
+    - apps
 - include_tasks: fedora/tilix.yml
   tags:
     - tilix
+    - apps
 - include_tasks: fedora/tusk.yml
   tags:
     - tusk
+    - apps
 - include_tasks: fedora/vim.yml
   tags:
     - vim
+    - apps
+- include_tasks: flatpak/vscode.yml
+  tags:
+    - vscode
+    - flatpak
+    - apps
+    - flatpak_apps
+- include_tasks: flatpak/spotify.yml
+  tags:
+    - spotify
+    - flatpak
+    - apps
+    - flatpak_apps
+- include_tasks: flatpak/sublime.yml
+  tags:
+    - sublime
+    - flatpak
+    - apps
+    - flatpak_apps
