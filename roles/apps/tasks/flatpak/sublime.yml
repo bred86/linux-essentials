@@ -1,0 +1,3 @@
+- name: Installing Sublime
+  raw: flatpak install --from --assumeyes https://flathub.org/repo/appstream/com.sublimetext.three.flatpakref
+  when: ansible_version.major >= 2 and ansible_version.minor < 6

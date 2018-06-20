@@ -1,0 +1,16 @@
+- apt_repository:
+    repo: "ppa:alexlarsson/flatpak"
+    state: present
+  when: {{ ansible_distribution_version is version('17.10', '<=') }} is true
+
+- name: install Flatpak
+  apt:
+    name: '{{ item }}'
+    update_cache: yes
+    force: yes
+  with_items:
+    - flatpak
+    - gnome-software-plugin-flatpak
+
+- name: Installing Flathub
+  raw: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo

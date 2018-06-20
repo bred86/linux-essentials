@@ -1,4 +1,12 @@
----
-  - name: Update all packages to the latest version
-    apt:
-      upgrade: dist
+- include_tasks: ubuntu/flatpak.yml
+  tags:
+    - flatpak
+    - setup
+- include_tasks: ubuntu/snap.yml
+  tags:
+    - snap
+    - setup
+- include_tasks: ubuntu/upgrade.yml
+  tags:
+    - upgrade
+    - setup
