@@ -1,3 +1,12 @@
----
-  - name: Update all packages to the latest version
-    raw: /usr/bin/dnf -y upgrade
+- include_tasks: fedora/flatpak.yml
+  tags:
+    - flatpak
+    - setup
+- include_tasks: fedora/snap.yml
+  tags:
+    - snap
+    - setup
+- include_tasks: fedora/upgrade.yml
+  tags:
+    - upgrade
+    - setup
