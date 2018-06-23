@@ -1,15 +1,15 @@
-- name: installing easy_install
+- name: Installing Python
   apt:
     name: "{{ item }}"
-    update_cache: yes
+    state: latest
   with_items:
-    - python-setuptools
-    - python3-setuptools
+    - python
+    - python3
 
-- name: installing pip
-  easy_install:
-    name: pip
-    executable: "{{ item }}"
+- name: Installing PIP
+  apt:
+    name: "{{ item }}-pip"
+    state: latest
   with_items:
-    - easy_install
-    - easy_install3
+    - python
+    - python3

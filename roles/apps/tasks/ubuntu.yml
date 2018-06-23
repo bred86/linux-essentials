@@ -1,27 +1,50 @@
 - include_tasks: ubuntu/atom.yml
   tags:
     - atom
+    - apps
 - include_tasks: general/apm.yml
   tags:
     - apm
-- include_tasks: ubuntu/chrome.yml
-  tags:
-    - chrome
-- include_tasks: ubuntu/hipchat.yml
-  tags:
-    - hipchat
+    - apps
 - include_tasks: general/telegram.yml
   tags:
     - telegram
-- include_tasks: ubuntu/tilix.yml
-  tags:
-    - tilix
-- include_tasks: ubuntu/whatsie.yml
-  tags:
-    - whatsie
-- include_tasks: ubuntu/spotify.yml
-  tags:
-    - spotify
+    - apps
 - include_tasks: ubuntu/insync.yml
   tags:
     - insync
+    - apps
+- include_tasks: ubuntu/spotify.yml
+  tags:
+    - spotify
+    - apps
+- include_tasks: ubuntu/tilix.yml
+  tags:
+    - tilix
+    - apps
+- include_tasks: ubuntu/vim.yml
+  tags:
+    - vim
+    - apps
+- include_tasks: ubuntu/vivaldi.yml
+  tags:
+    - vivaldi
+    - apps
+- include_tasks: flatpak/vscode.yml
+  tags:
+    - vscode
+    - flatpak
+    - apps
+    - flatpak_apps
+- include_tasks: flatpak/spotify.yml
+  tags:
+    - spotify
+    - flatpak
+    - apps
+    - flatpak_apps
+- include_tasks: flatpak/sublime.yml
+  tags:
+    - sublime
+    - flatpak
+    - apps
+    - flatpak_apps

@@ -1,5 +1,9 @@
+- apt_key:
+    url: "https://packagecloud.io/AtomEditor/atom/gpgkey"
+    state: present
+
 - apt_repository:
-    repo: "ppa:webupd8team/atom"
+    repo: "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
     state: present
 
 - name: install Atom
