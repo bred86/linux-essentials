@@ -1,4 +1,0 @@
-- name: Installing Tilix
-  dnf:
-    name: tilix
-    state: latest

@@ -1,4 +1,0 @@
-- name: install vim
-  dnf:
-    name: vim
-    state: latest

@@ -1,0 +1,40 @@
+# ############################
+# Ubuntu
+# ############################
+- name: install Atom
+  snap:
+    name: atom
+    classic: yes
+    state: present
+  when: ansible_distribution == 'Ubuntu'
+
+- name: install VIM
+  apt:
+    name: vim
+    update_cache: yes
+  when: ansible_distribution == 'Ubuntu'
+
+# ############################
+# Fedora
+# ############################
+
+# ############################
+# General
+# ############################
+- name: Installing Atom's package
+  raw: /usr/bin/apm install {{ item }}
+  become: no
+  with_items:
+    - atom-beautify
+    - atom-ide-ui
+    - linter
+    - linter-ui-default
+    - intentions
+    - busy-signal
+    - language-ansible
+    - linter-docker
+    - language-docker
+    - ide-python
+    - linter-pycodestyle
+    - atom-jinja2
+    - pretty-json

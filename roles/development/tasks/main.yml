@@ -1,5 +1,0 @@
-- include_tasks: ubuntu.yml
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-
-- include_tasks: fedora.yml
-  when: ansible_distribution == 'Fedora' or ansible_distribution == 'Red Hat Enterprise Linux'

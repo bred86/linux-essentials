@@ -1,7 +1,0 @@
-- name: install vim
-  apt:
-    name='{{ item }}'
-    update_cache=yes
-    force=yes
-  with_items:
-    - vim

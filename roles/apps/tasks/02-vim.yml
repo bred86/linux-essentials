@@ -1,0 +1,12 @@
+# ############################
+# Ubuntu
+# ############################
+- name: install VIM
+  apt:
+    name: vim
+    update_cache: yes
+  when: ansible_distribution == 'Ubuntu'
+
+# ############################
+# Fedora
+# ############################

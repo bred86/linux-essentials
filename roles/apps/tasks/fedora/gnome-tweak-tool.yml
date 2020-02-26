@@ -1,4 +1,0 @@
-- name: install Midori
-  dnf:
-    name: gnome-tweak-tool
-    state: latest

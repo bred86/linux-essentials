@@ -1,6 +1,0 @@
-- name: Install snapd
-  apt:
-    name: "{{ item }}"
-    update_cache: yes
-  with_items:
-    - snapd

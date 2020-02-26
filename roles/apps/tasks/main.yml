@@ -1,6 +1,14 @@
----
-  - include_tasks: ubuntu.yml
-    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- include_tasks: 00-tilix.yml
+  when: skip_tilix is not defined and (skip_tilix != 'yes' or skip_tilix != 'true')
 
-  - include_tasks: fedora.yml
-    when: ansible_distribution == 'Fedora' or ansible_distribution == 'Red Hat Enterprise Linux'
+- include_tasks: 01-atom.yml
+  when: skip_atom is not defined and (skip_atom != 'yes' or skip_atom != 'true')
+
+- include_tasks: 02-vim.yml
+  when: skip_vim is not defined and (skip_vim != 'yes' or skip_vim != 'true')
+
+- include_tasks: 03-chrome.yml
+  when: skip_chrome is not defined and (skip_chrome != 'yes' or skip_chrome != 'true')
+
+- include_tasks: 04-curl.yml
+  when: skip_curl is not defined and (skip_curl != 'yes' or skip_curl != 'true')

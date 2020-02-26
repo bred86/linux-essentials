@@ -1,9 +1,0 @@
-- name: Downloading Tusk (Evernote Client)
-  get_url:
-    url: https://github.com/klauscfhq/tusk/releases/download/v0.9.4/tusk-0.9.4.x86_64.rpm
-    dest: /tmp/tusk.rpm
-
-- name: Installing Tusk
-  dnf:
-    name: /tmp/tusk.rpm
-    state: present
