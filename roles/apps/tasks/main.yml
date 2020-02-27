@@ -12,3 +12,9 @@
 
 - include_tasks: 04-curl.yml
   when: skip_curl is not defined and (skip_curl != 'yes' or skip_curl != 'true')
+
+- include_tasks: 05-terraform.yml
+  when: skip_terraform is not defined and (skip_terraform != 'yes' or skip_terraform != 'true')
+
+- include_tasks: 06-gnome-tweak-tool.yml
+  when: skip_gtt is not defined and (skip_gtt != 'yes' or skip_gtt != 'true')
