@@ -7,13 +7,6 @@
     classic: yes
     state: present
   when: ansible_distribution == 'Ubuntu'
-
-- name: install VIM
-  apt:
-    name: vim
-    update_cache: yes
-  when: ansible_distribution == 'Ubuntu'
-
 # ############################
 # Fedora
 # ############################
@@ -22,7 +15,7 @@
 # General
 # ############################
 - name: Installing Atom's package
-  raw: /usr/bin/apm install {{ item }}
+  raw: "/snap/bin/apm install {{ package }}"
   become: no
   with_items:
     - atom-beautify
@@ -38,3 +31,5 @@
     - linter-pycodestyle
     - atom-jinja2
     - pretty-json
+  loop_control:
+    loop_var: package

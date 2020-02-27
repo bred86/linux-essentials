@@ -1,20 +1,19 @@
-- include_tasks: 00-tilix.yml
-  when: skip_tilix is not defined and (skip_tilix != 'yes' or skip_tilix != 'true')
+- include_tasks: "{{ item }}"
+  with_fileglob:
+    - browser/*.yml
+  when: skip_browser is not defined and (skip_browser != 'yes' or skip_browser != 'true')
 
-- include_tasks: 01-atom.yml
-  when: skip_atom is not defined and (skip_atom != 'yes' or skip_atom != 'true')
+- include_tasks: "{{ item }}"
+  with_fileglob:
+    - chat/*.yml
+  when: skip_chat is not defined and (skip_chat != 'yes' or skip_chat != 'true')
 
-- include_tasks: 02-vim.yml
-  when: skip_vim is not defined and (skip_vim != 'yes' or skip_vim != 'true')
+- include_tasks: "{{ item }}"
+  with_fileglob:
+    - text_editor/*.yml
+  when: skip_text_editor is not defined and (skip_text_editor != 'yes' or skip_text_editor != 'true')
 
-- include_tasks: 03-chrome.yml
-  when: skip_chrome is not defined and (skip_chrome != 'yes' or skip_chrome != 'true')
-
-- include_tasks: 04-curl.yml
-  when: skip_curl is not defined and (skip_curl != 'yes' or skip_curl != 'true')
-
-- include_tasks: 05-terraform.yml
-  when: skip_terraform is not defined and (skip_terraform != 'yes' or skip_terraform != 'true')
-
-- include_tasks: 06-gnome-tweak-tool.yml
-  when: skip_gtt is not defined and (skip_gtt != 'yes' or skip_gtt != 'true')
+- include_tasks: "{{ item }}"
+  with_fileglob:
+    - tools/*.yml
+  when: skip_tools is not defined and (skip_tools != 'yes' or skip_tools != 'true')
