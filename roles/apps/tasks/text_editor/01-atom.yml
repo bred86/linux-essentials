@@ -1,5 +1,5 @@
 # ############################
-# Ubuntu
+# General
 # ############################
 - name: install Atom
   snap:
@@ -7,13 +7,7 @@
     classic: yes
     state: present
   when: ansible_distribution == 'Ubuntu'
-# ############################
-# Fedora
-# ############################
 
-# ############################
-# General
-# ############################
 - name: Installing Atom's package
   raw: "/snap/bin/apm install {{ package }}"
   become: no
